@@ -2,7 +2,7 @@ from transformers import pipeline
 import gradio as gr
 
 
-model = pipeline("text-classification")
+model = pipeline("text-classification", "ProsusAI/finbert")
 def predict(text):
     try:
         result = model(text)
