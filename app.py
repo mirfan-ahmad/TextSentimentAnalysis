@@ -10,13 +10,17 @@ def predict(text):
     except Exception as e:
         return str(e)
 
-with gr.Blocks() as demo:
-    textbox = gr.Textbox(placeholder="Enter your text", lines=10)
-    demo = gr.Interface(fn=predict, inputs=textbox, outputs="text")
-    
+demo = gr.Interface(
+    fn=predict,
+    inputs=gr.Textbox(placeholder="Enter your text", lines=10),
+    outputs="text",
+    title="FinBERT Financial Sentiment Analysis",
+    description="Enter financial text to analyze its sentiment (positive/negative/neutral)"
+)
+
 demo.launch(
     server_name="0.0.0.0",
     server_port=7860,
-    share=False, 
+    share=False,
     debug=True
 )
