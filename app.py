@@ -14,8 +14,8 @@ demo = gr.Interface(
     fn=predict,
     inputs=gr.Textbox(placeholder="Enter your text", lines=10),
     outputs="text",
-    title="FinBERT Financial Sentiment Analysis",
-    description="Enter financial text to analyze its sentiment (positive/negative/neutral)"
+    title="Text Sentiment Analysis",
+    description="Enter text to analyze its sentiment (positive/negative/neutral)"
 )
 
 demo.launch(
