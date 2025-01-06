@@ -14,4 +14,9 @@ with gr.Blocks() as demo:
     textbox = gr.Textbox(placeholder="Enter your text", lines=10)
     demo = gr.Interface(fn=predict, inputs=textbox, outputs="text")
     
-demo.launch()
+demo.launch(
+    server_name="0.0.0.0",
+    server_port=7860,
+    share=False, 
+    debug=True
+)
